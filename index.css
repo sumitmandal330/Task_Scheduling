@@ -1,0 +1,442 @@
+/* whole body change line 5 to 53 /*
+/* gender features line 54 to 124*/
+/* skin color 128 to 272*/
+/*eye color 278 to 391*/
+/* clothing color 395 to 437*/
+
+.container-fluid {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.image-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.image-container img {
+    border: 1px solid #ddd;
+    padding: 5px;
+    max-height: 600px;
+    object-fit: cover;
+    width: 100%;
+}
+
+h5 {
+    margin-top: 15px;
+}
+
+.btn-group .btn,
+.btn-group-vertical .btn {
+    margin-bottom: 2px;
+}
+
+/* Media queries for extra responsiveness */
+@media (max-width: 768px) {
+    .btn-group.flex-wrap {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .image-container img {
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 576px) {
+    .btn-group.flex-wrap {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .image-container img {
+        max-height: 300px;
+    }
+}
+
+/*radio box for gender*/
+.form-check {
+    border: 1px solid black;
+    border-radius: 2%;
+    margin-bottom: 10px;
+    width: 150px;
+    height:40px;
+    padding:10px; 
+    display:flex;
+    white-space: nowrap; 
+    height:40px;
+    padding: 10px;
+    flex-direction: row;    
+    display: flex;
+    align-items: center;
+
+     /* Include padding and border in the element's width and height */
+}
+
+.form-check input {
+    display: none;
+}
+
+.form-check label{
+    margin-right: 30px;
+    padding-left: 35px;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    flex-grow: 1;
+    font-size: 16px; 
+}
+
+.form-check label::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border: 1px solid black;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    border-radius: 3px;
+}
+
+.form-check label::after {
+    content: "✓";
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 0;
+    top: 55%;
+    transform: translateY(-60%);
+    background-color: black;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.form-check input[type="radio"]:checked + label::after {
+    opacity: 1;
+}
+
+
+
+/* SKIN COLOR*/
+
+.radio1 input {
+    display: none;
+}
+
+.radio1 label {
+    margin-right: 30px;
+    padding-right: 35px;
+    padding-left: 15px;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    white-space: nowrap;
+    flex-grow: 1;
+    font-size: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* colors for different skin tones */
+.fair-skin::before {
+    background-color: #fde0c8;
+    
+}
+
+.fair-skin{
+    color:#fde0c8;
+}
+
+.light-skin::before {
+    background-color: #f8d7c3;
+}
+
+.light-skin{
+    color:#f8d7c3;
+}
+
+.medium-skin::before {
+    background-color: #e0ac69;
+}
+.medium-skin{
+    color:#e0ac69;
+}
+
+.olive-skin::before {
+    background-color: #c68642;
+}
+
+.olive-skin{
+    color:#c68642;
+}
+
+.brown-skin::before {
+    background-color: #8d5524;
+}
+
+.brown-skin{
+    color:#8d5524;
+}
+
+.dark-brown-skin::before {
+    background-color: #7f4b22;
+}
+
+.dark-brown-skin{
+    color:#7f4b22;
+}
+
+.black-skin::before {
+    background-color: #3b3024;
+}
+.black-skin{
+    color:#3b3024;
+}
+
+.radio1 label::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 3px;
+    border: 1px solid #ccc; 
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* Change background color of the entire label when selected */
+.radio1 input[type="radio"]:checked + label.fair-skin,
+.radio1 input[type="radio"]:checked + label.light-skin,
+.radio1 input[type="radio"]:checked + label.medium-skin,
+.radio1 input[type="radio"]:checked + label.olive-skin,
+.radio1 input[type="radio"]:checked + label.brown-skin,
+.radio1 input[type="radio"]:checked + label.dark-brown-skin,
+.radio1 input[type="radio"]:checked + label.black-skin {
+    color: black;
+}
+
+/* Remove the square radio button when selected */
+.radio1 input[type="radio"]:checked + label::before {
+    content: none;
+}
+
+/* Apply the color change when selected */
+.radio1 input[type="radio"]:checked + label.fair-skin {
+    background-color: #fde0c8;
+}
+
+.radio1 input[type="radio"]:checked + label.light-skin {
+    background-color: #f8d7c3;
+}
+
+.radio1 input[type="radio"]:checked + label.medium-skin {
+    background-color: #e0ac69;
+}
+
+.radio1 input[type="radio"]:checked + label.olive-skin {
+    background-color: #c68642;
+}
+
+.radio1 input[type="radio"]:checked + label.brown-skin {
+    background-color: #8d5524;
+}
+
+.radio1 input[type="radio"]:checked + label.dark-brown-skin {
+    background-color: #7f4b22;
+}
+
+.radio1 input[type="radio"]:checked + label.black-skin {
+    background-color: #3b3024;
+}
+
+/* Ensure the tick mark is hidden when not selected */
+.radio1 label::after {
+    opacity: 0;
+    background-color: transparent;
+}
+
+.radio1 input[type="radio"]:checked + label::after {
+    opacity: 1;
+}
+
+/*EYE COLOR */
+
+
+.brown-color::before {
+    background-color: brown;
+    
+}
+
+.brown-color{
+    color:brown;
+}
+
+.blue-color::before {
+    background-color: blue;
+}
+
+.blue-color{
+    color:blue;
+}
+
+.green-color::before {
+    background-color:green;
+}
+.green-color{
+    color:green;
+}
+
+.hazel-color::before {
+    background-color: rgba(143, 96, 8, 0.669);
+}
+
+.hazel-color{
+    color:rgba(143, 96, 8, 0.669);
+}
+
+.amber-color::before {
+    background-color: #c87d0c;
+}
+
+.amber-color{
+    color:#c87d0c;
+}
+
+.grey-color::before {
+    background-color: gray;
+}
+
+.grey-color{
+    color:gray;
+}
+
+.voilet-color::before {
+    background-color: violet;
+}
+.voilet-color{
+    color:violet;
+}
+
+.heterochromia-color::before {
+    background-color: rgb(19, 158, 208);
+}
+.heterochromia-color{
+    color:rgb(19, 158, 208);
+}
+
+
+.radio1 input[type="radio"]:checked + label.brown-color,
+.radio1 input[type="radio"]:checked + label.blue-color,
+.radio1 input[type="radio"]:checked + label.green-color,
+.radio1 input[type="radio"]:checked + label.hazel-color,
+.radio1 input[type="radio"]:checked + label.amber-color,
+.radio1 input[type="radio"]:checked + label.grey-color,
+.radio1 input[type="radio"]:checked + label.voilet-color, 
+.radio1 input[type="radio"]:checked + label.heterochromia-color{
+    color:white;
+}
+
+.radio1 input[type="radio"]:checked + label.brown-color {
+    background-color:brown;
+}
+
+.radio1 input[type="radio"]:checked + label.blue-color {
+    background-color:blue;
+}
+
+.radio1 input[type="radio"]:checked + label.green-color {
+    background-color:green;
+}
+
+.radio1 input[type="radio"]:checked + label.hazel-color {
+    background-color:rgba(143, 96, 8, 0.669);
+}
+
+.radio1 input[type="radio"]:checked + label.amber-color {
+    background-color:#c87d0c;
+}
+
+.radio1 input[type="radio"]:checked + label.grey-color {
+    background-color:gray;
+}
+
+.radio1 input[type="radio"]:checked + label.voilet-color {
+    background-color:violet ;
+}
+
+.radio1 input[type="radio"]:checked + label.heterochromia-color {
+    background-color:rgb(19, 158, 208) ;
+}
+
+.eye-color{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:10px;
+    margin-top:10px;
+
+}
+
+/* clothing types*/
+
+.radio2 input {
+    display: none; 
+}
+
+.radio2 label {
+    padding: 5px 10px;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    background-color: #f0f0f0; 
+    box-sizing:border-box;
+    height:40px;
+}
+
+.radio2 input[type="radio"]:checked + label {
+    color: white;
+    background-color: rgb(83, 82, 82); 
+    border: none; 
+}
+
+
+
+.radio2 label {
+    display: flex;
+    justify-content:space-between;
+    align-items: left;
+    text-align: left;
+}
+
+.radio2 label h1 {
+    font-size: 15px;
+    margin: 0px;
+    flex-basis: 30%; 
+}
+
+.radio2 label p {
+    font-size: 10px;
+    color: gray;
+    margin-left: 15px;
+    flex-basis: 120%; 
+    text-align:justify;
+}
+
+.distance{
+    margin-bottom:2px;
+}
